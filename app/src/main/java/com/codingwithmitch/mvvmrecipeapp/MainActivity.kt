@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
 import androidx.compose.material.Text
+import com.codingwithmitch.mvvmrecipeapp.domain.model.Recipe
+import com.codingwithmitch.mvvmrecipeapp.domain.network.model.RecipeDtoMapper
 
 class MainActivity : AppCompatActivity(){
 
@@ -20,5 +22,9 @@ class MainActivity : AppCompatActivity(){
         }
     } */
      setContentView(R.layout.activity_main)
+
+        val mapper = RecipeDtoMapper()
+        val recipe = Recipe()
+        val recipeDTO = mapper.mapToEntity(recipe)
     }
 }
